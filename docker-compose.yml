@@ -1,0 +1,11 @@
+version: '2'
+
+services:
+    bot:
+        build: .
+        container_name: bot
+        mem_limit: 1g
+        restart: always
+        command: sh -c /bot/bot.sh
+        volumes:
+            - "~/bot/data:/bot/data"

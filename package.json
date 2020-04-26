@@ -1,0 +1,30 @@
+{
+  "name": "covid-19-telegram-bot",
+  "version": "0.0.1",
+  "description": "Un Bot Télégram pour générer rapidement l'attestation de déplacement dérogatoire.",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/ziedzaiem/Covid-19-Telegram-Bot.git"
+  },
+  "scripts": {
+    "dev": "./bot.sh"
+  },
+  "bugs": "https://github.com/ziedzaiem/Covid-19-Telegram-Bot/issues",
+  "contributors": "https://github.com/ziedzaiem/Covid-19-Telegram-Bot/graphs/contributors",
+  "keywords": [
+    "bot",
+    "telegram",
+    "covid-19",
+    "attestation"
+  ],
+  "author": {
+    "name": "Zied ZAIEM",
+    "email": "zaiem.zied@gmail.com",
+    "url": "https://www.ziedzaiem.com"
+  },
+  "license": "MIT",
+  "dependencies": {
+    "pdf-lib": "^1.4.1",
+    "qrcode": "^1.4.4"
+  }
+}
