@@ -2,6 +2,8 @@
 
 Un bot [Telegram](https://telegram.org/) pour générer rapidement l'attestation de déplacement dérogatoire.
 
+[![Known Vulnerabilities](https://snyk.io/test/github/ziedzaiem/Covid-19-Telegram-Bot/badge.svg?targetFile=package.json)](https://snyk.io/test/github/ziedzaiem/Covid-19-Telegram-Bot?targetFile=package.json)
+
 ![Icône](icon.png)
 
 Ce bot est basé sur le [code source]((https://github.com/LAB-MI/deplacement-covid-19) ) du [générateur officiel de l'attestation de déplacement dérogatoire](https://media.interieur.gouv.fr/deplacement-covid-19/) 
