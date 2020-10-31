@@ -203,7 +203,7 @@ sendPDF() {
 
 # Générer un QR Code
 genQrCode() {
-  QR_STRING="Cree le: $creationDate a $creationHour; Nom: $lastname; Prenom: $firstname; Naissance: $birthday a $lieunaissance; Adresse: $address $zipcode $town; Sortie: $datesortie a ${releaseHours}h$releaseMinutes; Motifs: $reasons"
+  QR_STRING=$(printf "Cree le: %s a %s;\n Nom: %s;\n Prenom: %s;\n Naissance: %s a %s;\n Adresse: %s;\n Sortie: %s a %s;\n Motifs: %s" "$creationDate" "$creationHour" "$lastname" "$firstname" "$birthday" "$lieunaissance" "$address $zipcode $town" "$datesortie" "${releaseHours}h${releaseMinutes}" "$reasons")
 
   $QR -o "$1" -l M -m 3 -s 6 "$QR_STRING"
 }
@@ -235,15 +235,25 @@ respond() {
   case $cmd in
     /info) sendInfo;;
     /travail) sendAttestation travail;;
-    /courses) sendAttestation courses;;
+    /achats) sendAttestation achats;;
     /sante) sendAttestation sante;;
-    /sport) sendAttestation sport;;
-    /help | /start) sendMessage "🤖 Commandes disponibles:\n
-    /travail - Attestation pour motif : Travail 🏢
-    /courses - Attestation pour motif : Courses 🛒
-    /sante - Attestation pour motif : Santé 🏥
-    /sport - Attestation pour motif : Sport 🏃\n
-    /info - Afficher infos service";;
+    /famille) sendAttestation famille;;
+    /handicap) sendAttestation handicap;;
+    /sport_animaux) sendAttestation sport_animaux;;
+    /convocation) sendAttestation convocation;;
+    /missions) sendAttestation missions;;
+    /enfants) sendAttestation enfants;;
+    /help | /start) sendMessage "🤖 Motfis d'attestations disponibles:\n
+    /travail - 🏢 Travail / 🏫 Formations \n
+    /achats - 🛒 Achats de première nécessité \n
+    /sante - 🏥 Consultations, examens et soins \n
+    /famille - 👪 Motif familial impérieux \n
+    /handicap - ♿ Déplacement et accompagnant \n
+    /sport_animaux - 🏃 Sport & 🐕 Animaux \n
+    /convocation - 🇫🇷 Service public \n
+    /missions - 🔨 Missions d'intérêt général \n
+    /enfants - Chercher les enfants \n
+    /info - 🚸 Afficher infos service";;
     *) sendMessage "Commande '$cmd' inconnue"
   esac
 

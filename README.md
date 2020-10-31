@@ -1,3 +1,9 @@
+# Mise à jour 31/10/2020
+
+Le code a été mis à jour suite au re-confinement d'octobre 2020.
+
+Nouveau code source : https://github.com/LAB-MI/attestation-deplacement-derogatoire-q4-2020
+
 # Covid-19-Telegram-Bot
 
 Un bot [Telegram](https://telegram.org/) pour générer rapidement l'attestation de déplacement dérogatoire.
@@ -12,13 +18,22 @@ Ce bot est basé sur le [code source]((https://github.com/LAB-MI/deplacement-cov
 
 L'idée est de demander au bot de générer automatiquement le QR Code et PDF obtenus d'habitude par le formulaire numérique. Il suffit d'envoyer au bot l'unde des commandes suivantes pour générer une attestation avec le motif voulu :
 
-- /travail - Attestation pour motif : Travail 🏢
-- /courses - Attestation pour motif : Courses 🛒
-- /sante - Attestation pour motif : Santé 🏥
-- /sport - Attestation pour motif : Sport 🏃\n
-- /info - Afficher infos techniques du service
+- /travail - 🏢 Travail / 🏫 Formations
+- /achats - 🛒 Achats de première nécessité
+- /sante - 🏥 Consultations, examens et soins
+- /famille - 👪 Motif familial impérieux
+- /handicap - ♿ Déplacement et accompagnant
+- /sport_animaux - 🏃 Sport & 🐕 Animaux
+- /convocation - 🇫🇷 Service public
+- /missions - 🔨 Missions d'intérêt général
+- /enfants - Chercher les enfants
+- /info - 🚸 Afficher infos service
 
 ![Screenshot](screenshot.png)
+
+## Création et configuration du Bot Telegram
+
+Utiliser l'excellent not @BotFather pour créer votre bot Telegram.
 
 ## Configuration
 
@@ -31,7 +46,14 @@ Pour autoriser un utilisateur, il faut créer un fichier de conf se nommant *id*
 
 ## Développement
 
-Vous aurez besoin d'un Ubuntu avec curl, qrencode, jq et NodeJS installés pour travailler en local.
+Vous aurez besoin d'un Ubuntu (ou n'importe quelle distribution Linux) avec curl, qrencode, jq et NodeJS installés pour travailler en local.
+
+```shell
+apt-get update
+apt-get install curl qrencode jq
+
+# Voir https://github.com/nodesource/distributions/blob/master/README.md#debinstall pour installer NodeJS sur Ubuntu
+```
 
 Commencer par installer les dépendances JavaScript :
 
@@ -58,6 +80,13 @@ docker-compose down && docker-compose build && docker-compose up -d
 ## Crédits
 
 Ce projet a été réalisé à partir d'un fork des dépôts [deplacement-covid-19]((https://github.com/LAB-MI/deplacement-covid-19) de l'Incubateur du ministère de l'intérieur et [covid-19-certificate](https://github.com/nesk/covid-19-certificate) de [Johann Pardanaud](https://github.com/nesk).
+
+
+Les projets open source suivants ont été utilisés pour le développement de ce
+service :
+
+- [PDF-LIB](https://pdf-lib.js.org/)
+- [qrcode](https://github.com/soldair/node-qrcode)
 
 ## Licence
 

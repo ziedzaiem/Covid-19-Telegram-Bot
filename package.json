@@ -1,6 +1,6 @@
 {
   "name": "covid-19-telegram-bot",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "Un Bot Télégram pour générer rapidement l'attestation de déplacement dérogatoire.",
   "repository": {
     "type": "git",
@@ -24,7 +24,7 @@
   },
   "license": "MIT",
   "dependencies": {
-    "pdf-lib": "^1.4.1",
+    "pdf-lib": "^1.11.2",
     "qrcode": "^1.4.4"
   }
 }
